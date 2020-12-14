@@ -1,8 +1,12 @@
 
 const container = document.querySelector('.blogs');
 const searchForm = document.querySelector('.search');
+
+let LOCAL_API = "http://localhost:3000";
+let LIVE_API = "https://cbazil-json-api.herokuapp.com";
+
 const renderPosts = async (term) => {
-    let url = 'http://localhost:3000/posts?_sort=likes&_order=desc';
+    let url = `${LIVE_API}/posts?_sort=likes&_order=desc`;
 
     if (term) {
         url += `&q=${term}`;
